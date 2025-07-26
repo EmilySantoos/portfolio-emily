@@ -1,0 +1,356 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-fundo: #000;
+  --cor-primaria: #ff69b4;
+  --cor-secundaria: #1e90ff;
+  --cor-hover: #ffb6c1;
+  --fonte-titulo: 'Great Vibes', cursive;
+  --fonte-texto: 'Raleway', sans-serif;
+}
+
+/* Corpo e fundo */
+body {
+  background-color: var(--cor-fundo);
+  color: #fff;
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Rolagem personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-hover);
+}
+
+/* Canvas - estrelas */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+  color: #000;
+  border-bottom: 3px solid #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 3.5rem;
+  text-shadow: 0 0 10px var(--cor-primaria);
+  user-select: none;
+}
+
+.slogan {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.foto-perfil {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  border: 4px solid white;
+  box-shadow: 0 0 20px var(--cor-primaria);
+  user-select: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-weight: 700;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  user-select: none;
+}
+
+nav a:hover {
+  color: var(--cor-hover);
+  transform: scale(1.1);
+}
+
+/* Seções */
+.section-card {
+  max-width: 720px;
+  margin: 3rem auto;
+  background: rgba(255 255 255 / 0.05);
+  border-radius: 18px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 0 20px var(--cor-primaria);
+  backdrop-filter: blur(10px);
+  user-select: none;
+}
+
+h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px var(--cor-secundaria);
+}
+
+/* Botão mágico */
+.btn-magico {
+  display: inline-block;
+  padding: 12px 26px;
+  background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+  color: white;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  margin-top: 1rem;
+  box-shadow: 0 0 15px var(--cor-primaria);
+}
+
+.btn-magico:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--cor-hover);
+}
+
+/* Lista de habilidades */
+.lista-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+.lista-habilidades li {
+  background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+  padding: 8px 20px;
+  border-radius: 40px;
+  box-shadow: 0 0 15px var(--cor-primaria);
+  color: black;
+  font-weight: 700;
+}
+
+/* Carrossel Projetos */
+.carrossel-projetos {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.2rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+.carrossel-projetos::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carrossel-projetos::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+  border-radius: 5px;
+}
+
+.carrossel-projetos .item {
+  flex: 0 0 auto;
+  width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px var(--cor-primaria);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.carrossel-projetos .item:hover {
+  transform: scale(1.05);
+}
+
+.carrossel-projetos img {
+  width: 100%;
+  border-radius: 15px;
+  display: block;
+}
+
+/* Cartas dos certificados */
+.certificados-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+.carta {
+  width: 210px;
+  height: 140px;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+
+.carta > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: 0 0 15px var(--cor-secundaria);
+  transition: transform 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-family: var(--fonte-texto);
+  font-size: 1.1rem;
+  color: black;
+  background: white;
+  user-select: none;
+}
+
+.carta .back {
+  transform: rotateY(180deg);
+  background: black;
+  padding: 0;
+}
+
+.carta .back img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.carta:hover .front {
+  transform: rotateY(180deg);
+}
+
+.carta:hover .back {
+  transform: rotateY(360deg);
+}
+
+/* Quiz jogo */
+#quiz {
+  margin-top: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(30, 144, 255, 0.15);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 15px var(--cor-secundaria);
+  user-select: none;
+}
+
+#quiz p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#quiz button {
+  background: var(--cor-primaria);
+  border: none;
+  padding: 10px 18px;
+  margin: 8px;
+  border-radius: 20px;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#quiz button:hover {
+  background: var(--cor-hover);
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  color: #eee;
+  font-size: 0.9rem;
+  background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+  user-select: none;
+  position: relative;
+}
+
+.redes-footer {
+  margin-bottom: 0.6rem;
+}
+
+.redes-footer a {
+  color: white;
+  margin: 0 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.redes-footer a:hover {
+  color: var(--cor-hover);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .carrossel-projetos {
+    justify-content: center;
+  }
+
+  .carta {
+    width: 160px;
+    height: 110px;
+  }
+
+  .btn-magico {
+    padding: 10px 20px;
+  }
+}
